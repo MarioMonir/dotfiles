@@ -1,12 +1,11 @@
 "         
 "  ██╗███╗   ██╗██╗████████╗██╗   ██╗██╗███╗   ███╗
 "  ██║████╗  ██║██║╚══██╔══╝██║   ██║██║████╗ ████║
-"  ██║██╔██╗ ██║██║   ██║   ██║   ██║██║██╔████╔██║
 "  ██║██║╚██╗██║██║   ██║   ╚██╗ ██╔╝██║██║╚██╔╝██║
 "  ██║██║ ╚████║██║   ██║██╗ ╚████╔╝ ██║██║ ╚═╝ ██║
 "  ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
 " 
-"   => MARIO Says hello 
+"   => MARIO Says hello world 
 "
 " ===========================================================================
 
@@ -30,7 +29,6 @@ filetype plugin on
 " set foldlevelstart=99
 " set colorcolumn=80
 
-
 " Vim-Plug init ================================================================
 " instal vim plug if not existed
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
@@ -40,13 +38,16 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 
+" Attempt to Speed up Vim ======================================================
+set ttyfast
+set lazyredraw
 
 
-" Plugins =====================================================================
+
+" Plugins ======================================================================
 call plug#begin('~/.vim/plugged')
     Plug 'mhinz/vim-startify'
-    " Plug 'dikiaap/minimalist'
-    Plug 'dracula/vim', { 'as': 'dracula' }
+    Plug 'dikiaap/minimalist'
     Plug 'tpope/vim-surround'
     Plug 'alvan/vim-closetag'
     Plug 'jiangmiao/auto-pairs'
@@ -55,12 +56,21 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'
     Plug 'vim-airline/vim-airline'
     Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-    " Plug 'junegunn/fzf',{ 'do': { -> fzf#install() } }
-    " Plug 'junegunn/fzf.vim'
-    " Plug 'rust-lang/rust.vim'
-    Plug 'cespare/vim-toml'
-    Plug 'tpope/vim-commentary'
+    
+    " Plug 'joshdick/onedark.vim'
+
+    " Plug 'ayu-theme/ayu-vim'
+
+    Plug 'nvim-lua/plenary.nvim'
+    " Plug 'nvim-telescope/telescope.nvim'
+
+    Plug 'junegunn/fzf',{ 'do': { -> fzf#install() } } " Fuzzy finder
+    Plug 'junegunn/fzf.vim'                            " Fuzzy Finder
+    Plug 'tpope/vim-commentary'  " For commenting  gcc & gcl 
     Plug 'tpope/vim-fugitive'
+    Plug 'preservim/tagbar' 
+
+
 call plug#end()
 
 
@@ -86,14 +96,15 @@ let g:startify_lists = [
 let g:startify_bookmarks = [ 
         \{'w':'~/Mario/work'},
         \{'m':'~/Mario/'},
-        \{ 'i': '~/.config/nvim/init.vim'},
+        \{ 'i': '~/Mario/dotfiles/.config/nvim/init.vim'},
         \ ]
 
 
 " Airlne config ==============================================================
-" let g:airline_theme='minimalist'
+let g:airline_theme='minimalist'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
 
 " Coc config ==================================================================
 let g:coc_global_extensions = [
@@ -109,20 +120,21 @@ let g:coc_global_extensions = [
 
 
 " terminal colors =============================================================
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 
 " Colors ======================================================================
-colorscheme dracula
-let colorscheme_bg = "dark"
-" hi Normal ctermbg=NONE guibg=NONE
-" hi Normal guibg=NONE ctermbg=NONE
-" hi LineNr guibg=NONE ctermbg=NONE
-" hi SignColumn guibg=NONE ctermbg=NONE
-" hi EndOfBuffer guibg=NONE ctermbg=NONE
+colorscheme minimalist
+hi Normal ctermbg=NONE guibg=NONE
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi SignColumn guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
+highlight Cursor guifg=#f00 guibg=#657b83
+highlight Comment cterm=italic gui=italic
 set fillchars=vert:\│,eob:\ 
-
+" autocmd ColorScheme hemisu hi Normal guibg=NONE ctermbg=NONE
 
 " NERDTreeToggle config =======================================================
 function! ToggleNERDTREE()
