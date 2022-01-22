@@ -56,21 +56,15 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'
     Plug 'vim-airline/vim-airline'
     Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-    
-    " Plug 'joshdick/onedark.vim'
-
-    " Plug 'ayu-theme/ayu-vim'
-
     Plug 'nvim-lua/plenary.nvim'
-    " Plug 'nvim-telescope/telescope.nvim'
-
     Plug 'junegunn/fzf',{ 'do': { -> fzf#install() } } " Fuzzy finder
     Plug 'junegunn/fzf.vim'                            " Fuzzy Finder
     Plug 'tpope/vim-commentary'  " For commenting  gcc & gcl 
     Plug 'tpope/vim-fugitive'
     Plug 'preservim/tagbar' 
-
-
+    " Plug 'joshdick/onedark.vim'
+    " Plug 'ayu-theme/ayu-vim'
+    " Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 
