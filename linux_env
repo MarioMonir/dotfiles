@@ -1,0 +1,49 @@
+
+My Favorite tools 
+===================
+
+
+tmux : tmux is a terminal multiplexer:
+-----------------------------------------------------------
+https://github.com/tmux/tmux
+
+
+lazygit : A simple terminal UI for git commands, written in Go with the gocui library. 
+---------------------------------------------------------------------------------------
+https://github.com/jesseduffield/lazygit
+
+
+
+fzf : fzf is a general-purpose command-line fuzzy finder.
+--------------------------------------------------------- 
+https://github.com/junegunn/fzf
+
+
+bat : A cat(1) clone with syntax highlighting and Git integration. (better than cat)
+------------------------------------------------------------------------------------
+https://github.com/sharkdp/bat
+
+
+gtop : System monitoring dashboard for terminal. 
+-----------------------------------------------------
+https://github.com/aksakalli/gtop
+
+
+dust : du + rust = dust. Like du but more intuitive.
+-----------------------------------------------------
+https://github.com/bootandy/dust
+
+
+
+duf : Disk Usage/Free Utility 
+-------------------------------------------------
+https://github.com/muesli/duf
+
+
+ 
+fx : Command-line JSON processing tool
+---------------------------------------
+https://github.com/antonmedv/fx
+
+
+
